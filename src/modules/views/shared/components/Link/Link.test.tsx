@@ -3,7 +3,6 @@ import renderer from 'react-test-renderer';
 import { shallow } from 'enzyme';
 
 import Link from './Link';
-import { Linking } from 'expo';
 
 describe('Link', () => {
   let props;
@@ -35,7 +34,10 @@ describe('Link', () => {
     } as any;
     const wrapper = shallow(<Link {...props} />);
     wrapper.setProps({ url, text });
-    await (wrapper.find('TouchableOpacity').first().prop('onPress') as any)();
+    await (wrapper
+      .find('TouchableOpacity')
+      .first()
+      .prop('onPress') as any)();
     expect(Link.linking.canOpenURL).toBeCalledWith(url);
     expect(Link.linking.openURL).toBeCalledWith(url);
   });
@@ -49,7 +51,10 @@ describe('Link', () => {
     } as any;
     const wrapper = shallow(<Link {...props} />);
     wrapper.setProps({ url, text });
-    await (wrapper.find('TouchableOpacity').first().prop('onPress') as any)();
+    await (wrapper
+      .find('TouchableOpacity')
+      .first()
+      .prop('onPress') as any)();
     expect(Link.linking.canOpenURL).toBeCalledWith(url);
     expect(Link.linking.openURL).not.toBeCalledWith(url);
   });
@@ -63,6 +68,9 @@ describe('Link', () => {
     } as any;
     const wrapper = shallow(<Link {...props} />);
     wrapper.setProps({ url });
-    (wrapper.find('TouchableOpacity').first().prop('onPress') as any)();
+    (wrapper
+      .find('TouchableOpacity')
+      .first()
+      .prop('onPress') as any)();
   });
 });

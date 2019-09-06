@@ -8,14 +8,8 @@ export interface IAvatarProps {
 }
 
 export default class Avatar extends React.PureComponent<IAvatarProps> {
-
   public render() {
     const { avatar } = this.props;
-    return (
-      <Image
-        style={Style.avatar}
-        source={{ uri: avatar }}
-      />
-    );
+    return <Image style={Style.avatar} source={{ uri: avatar }} />;
   }
 }

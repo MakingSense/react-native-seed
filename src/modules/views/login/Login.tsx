@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, View, Text, TextInput, KeyboardAvoidingView, ImageBackground } from 'react-native';
-import { NavigationScreenProp, NavigationStackScreenOptions } from 'react-navigation';
+import { View, Text, TextInput, KeyboardAvoidingView } from 'react-native';
+import { NavigationScreenProp, NavigationScreenOptions } from 'react-navigation';
 import { Button } from 'react-native-elements';
 
 import { ENV, STYLE } from '../../../constants';
@@ -21,7 +21,7 @@ export interface ILoginState {
 }
 
 export default class Login extends React.PureComponent<ILoginProps, ILoginState> {
-  public static navigationOptions: NavigationStackScreenOptions = {
+  public static navigationOptions: NavigationScreenOptions = {
     title: 'Login'
   };
 
@@ -46,12 +46,8 @@ export default class Login extends React.PureComponent<ILoginProps, ILoginState>
       <View style={styles.loginContainer}>
         <Text style={styles.heading1}>Making Sense RN seed</Text>
         <Text style={styles.heading2}>Please login to your account</Text>
-        {(hasError) ? <Text style={styles.headingError}>{'Oops! Invalid email or password'}</Text> : null}
-        <KeyboardAvoidingView
-          behavior="padding"
-          style={styles.keyboardContainer}
-          keyboardVerticalOffset={Login.isAndroid ? ENV.KEYBOARD_VERTICAL_OFFSET : 0}
-        >
+        {hasError ? <Text style={styles.headingError}>{'Oops! Invalid email or password'}</Text> : null}
+        <KeyboardAvoidingView behavior="padding" style={styles.keyboardContainer} keyboardVerticalOffset={Login.isAndroid ? ENV.KEYBOARD_VERTICAL_OFFSET : 0}>
           <View style={styles.inputTemplate}>
             <View style={styles.inputContainer}>
               <Text style={styles.inputLabel}>{'EMAIL:'}</Text>
@@ -62,7 +58,7 @@ export default class Login extends React.PureComponent<ILoginProps, ILoginState>
                 style={[styles.input, hasError && styles.inputError]}
                 underlineColorAndroid="rgba(0, 0, 0, 0)"
                 value={email}
-                onChangeText={(value) => this.handleOnChange('email', value)}
+                onChangeText={value => this.handleOnChange('email', value)}
               />
             </View>
             <View style={styles.inputContainer}>
@@ -74,23 +70,13 @@ export default class Login extends React.PureComponent<ILoginProps, ILoginState>
                 style={[styles.input, hasError && styles.inputError]}
                 underlineColorAndroid="rgba(0, 0, 0, 0)"
                 value={password}
-                onChangeText={(value) => this.handleOnChange('password', value)}
+                onChangeText={value => this.handleOnChange('password', value)}
               />
             </View>
           </View>
         </KeyboardAvoidingView>
-        <Button
-          loading={isLoading}
-          disabled={isLoading}
-          onPress={this.login}
-          title="Login"
-          backgroundColor={STYLE.COLOR.PRIMARY}
-          borderRadius={STYLE.BORDER.QUARTER}
-          fontSize={STYLE.FONT.SIZE.BUTTON_LARGE}
-          fontWeight={STYLE.FONT.WEIGHTS.MEDIUM}
-        />
+        <Button loading={isLoading} disabled={isLoading} onPress={this.login} title="Login" testID="login-button" />
       </View>
-
     );
   }
 
@@ -102,5 +88,5 @@ export default class Login extends React.PureComponent<ILoginProps, ILoginState>
     const { email, password } = this.state;
     const { login } = this.props;
     login(email, password);
-  }
+  };
 }

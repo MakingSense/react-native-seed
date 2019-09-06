@@ -1,7 +1,7 @@
 import stackNavigator from './routingModule';
 
 jest.mock('react-native-elements', () => {
-  const mockComponent = require('mockComponent').default;
+  const mockComponent = require('../../mockComponent').default;
   const Icon = mockComponent('Icon');
   return { Icon };
 });

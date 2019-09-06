@@ -15,6 +15,5 @@ export abstract class Logger {
     /* istanbul ignore next line */
     if (!Logger.shouldLog) return; // we don't want to cover the line that disables logs on the test env
     Logger.printer[level](...args);
-  }
-
+  };
 }

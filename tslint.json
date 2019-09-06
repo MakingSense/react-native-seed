@@ -1,7 +1,8 @@
 {
   "extends": [
     "tslint:latest",
-    "tslint-react"
+    "tslint-react",
+    "tslint-eslint-rules"
   ],
   "rules": {
     "member-access": [
@@ -68,7 +69,6 @@
     "no-switch-case-fall-through": false,
     "no-trailing-whitespace": true,
     "no-unused-expression": true,
-    "no-use-before-declare": true,
     "one-line": [
       true,
       "check-catch",
@@ -81,10 +81,15 @@
       "single",
       "jsx-double"
     ],
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
     "radix": true,
     "semicolon": [
       true,
-      "always"
+      "always",
+      "ignore-bound-class-methods"
     ],
     "switch-default": false,
     "trailing-comma": [
@@ -137,6 +142,10 @@
     "ordered-imports": false,
     "no-submodule-imports": false,
     "object-literal-sort-keys": false,
-    "no-implicit-dependencies": false
-  }
+    "no-implicit-dependencies": false,
+    "object-curly-spacing": true
+  },
+  "rulesDirectory": [
+    "node_modules/tslint-eslint-rules/dist/rules"
+  ]
 }

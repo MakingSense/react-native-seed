@@ -1,28 +1,32 @@
 {
   "expo": {
-    "name": "test making sense",
-    "version": "0.1.0",
-    "sdkVersion": "27.0.0",
+    "name": "test test MS",
+    "slug": "test-test-ms",
+    "version": "1.0.0",
+    "sdkVersion": "34.0.0",
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "ios": {
-      "bundleIdentifier": "com.making.sense.test"
+      "bundleIdentifier": "com.test.ms.test",
+      "supportsTablet": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      },
+      "buildNumber": "1.0.0"
     },
     "android": {
-      "package": "com.making.sense.test"
+      "package": "com.test.ms.test",
+      "versionCode": 1
     },
     "icon": "./icon.png",
-    "packagerOpts": {
-      "sourceExts": [
-        "ts",
-        "tsx"
-      ],
-      "transformer": "node_modules/react-native-typescript-transformer/index.js"
-    },
     "splash": {
       "image": "./src/assets/images/splash.png"
     },
     "privacy": "unlisted",
     "updates": {
-      "enabled": true,
+      "enabled": false,
       "checkAutomatically": "ON_ERROR_RECOVERY",
       "fallbackToCacheTimeout": 0
     }

@@ -46,7 +46,7 @@ describe('Login', () => {
     const password = 'password';
     const wrapper = shallow(<Login {...props} />);
     wrapper.setState({ email, password });
-    (wrapper.find('Button').first().prop('onPress') as any)();
+    (wrapper.find('[testID="login-button"]').prop('onPress') as any)();
     expect(props.login).toBeCalledWith(email, password);
   });
 
@@ -54,8 +54,14 @@ describe('Login', () => {
     const email = 'email';
     const password = 'password';
     const wrapper = shallow(<Login {...props} />);
-    (wrapper.find('TextInput').first().prop('onChangeText') as any)(email);
-    (wrapper.find('TextInput').last().prop('onChangeText') as any)(password);
+    (wrapper
+      .find('TextInput')
+      .first()
+      .prop('onChangeText') as any)(email);
+    (wrapper
+      .find('TextInput')
+      .last()
+      .prop('onChangeText') as any)(password);
     const prevState = JSON.parse(JSON.stringify(wrapper.instance().state));
     expect(wrapper.instance().state).toEqual({ ...prevState, email, password });
   });
