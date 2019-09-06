@@ -4,6 +4,7 @@ coverage
 ./coverage/**
 
 # expo
+app.json
 .expo/
 
 # dependencies

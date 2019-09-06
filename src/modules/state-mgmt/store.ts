@@ -7,21 +7,9 @@ import { NavigationService } from '../services/NavigationService';
 import { HelperService } from '../services/HelperService';
 import { Logger } from '../services/Logger';
 import { AsyncStorageService } from '../services/AsyncStorageService';
-import {
-  IRootState,
-  IEpicDependencies,
-  authState,
-  coreState,
-  userState,
-  todoState
-} from './rootState';
+import { IRootState, IEpicDependencies, authState, coreState, userState, todoState } from './rootState';
 
-const rootEpic = combineEpics<any>(
-  ...authState.epics,
-  ...coreState.epics,
-  ...userState.epics,
-  ...todoState.epics
-);
+const rootEpic = combineEpics<any>(...authState.epics, ...coreState.epics, ...userState.epics, ...todoState.epics);
 
 const epicMiddleware = createEpicMiddleware({
   dependencies: {
@@ -40,7 +28,8 @@ const store: Store = createStore<IRootState, any, any, any>(
     auth: authState.reducer,
     user: userState.reducer,
     todo: todoState.reducer
-  }), withDevtools(applyMiddleware(epicMiddleware))
+  }),
+  withDevtools(applyMiddleware(epicMiddleware))
 );
 
 export { store };

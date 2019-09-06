@@ -13,4 +13,7 @@ export const mapDispatchToProps = dispatch => ({
   fetchTodoList: (query: GeneralModel.IApiQuery) => dispatch(todoState.actions.setListStart(query))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(TodoList);

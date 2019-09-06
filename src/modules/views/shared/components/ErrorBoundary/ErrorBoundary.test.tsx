@@ -8,24 +8,33 @@ class HandGranade extends React.Component {
   public render() {
     const a: any = null;
     a.b.c = 10;
-    return (
-      <Text>
-        This should not work
-      </Text>
-    );
+    return <Text>This should not work</Text>;
   }
 }
 
 describe('ErrorBoundaryTest', () => {
-  global.console.error = () => { /** */ };
+  global.console.error = () => {
+    /** */
+  };
   it('renders child', () => {
-    const rendered = renderer.create(<ErrorBoundary><Text>Render test</Text></ErrorBoundary>).toJSON();
+    const rendered = renderer
+      .create(
+        <ErrorBoundary>
+          <Text>Render test</Text>
+        </ErrorBoundary>
+      )
+      .toJSON();
     expect(rendered).toMatchSnapshot();
   });
 
   it('renders placeholder when child render fails', () => {
-    const rendered = renderer.create(<ErrorBoundary><HandGranade>Render test</HandGranade></ErrorBoundary>).toJSON();
+    const rendered = renderer
+      .create(
+        <ErrorBoundary>
+          <HandGranade>Render test</HandGranade>
+        </ErrorBoundary>
+      )
+      .toJSON();
     expect(rendered).toMatchSnapshot();
   });
-
 });

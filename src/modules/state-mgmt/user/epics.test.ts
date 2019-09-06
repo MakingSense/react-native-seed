@@ -17,7 +17,6 @@ describe('user epics', () => {
   });
 
   describe('userGetEpicGetUserList', () => {
-
     const idList = ['userId', 'userId', 'userId'];
 
     it('should get epic for get user list', done => {
@@ -41,6 +40,5 @@ describe('user epics', () => {
         done();
       });
     });
-
   });
 });

@@ -1,7 +1,5 @@
 import { ActionsObservable } from 'redux-observable';
-import { throwError, of } from 'rxjs';
 
-import { ENV } from '../../../constants';
 import { IEpicDependencies, coreState } from '../rootState';
 import { authGetEpicAuthStart } from './epics';
 import { ActionType, actions } from './actions';
@@ -38,7 +36,9 @@ describe('auth epics', () => {
 
     it('should catch errors and dispatch them to the auth error handler', done => {
       const emitedActions = [];
-      deps.apiService.login = () => { throw error; };
+      deps.apiService.login = () => {
+        throw error;
+      };
       authGetEpicAuthStart(ActionsObservable.of(actions.start(email, password)), {} as any, deps).subscribe(output => {
         emitedActions.push(output);
         if (output.type === ActionType.SET_LOADING && output.payload.isLoading === false) {

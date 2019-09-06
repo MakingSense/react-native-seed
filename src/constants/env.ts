@@ -1,5 +1,5 @@
 import { Platform, StatusBar } from 'react-native';
-import { Header } from 'react-navigation';
+import { Header } from 'react-navigation-stack';
 import config from '../config/config.json';
 
 export const ENV = {

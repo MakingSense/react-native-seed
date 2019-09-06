@@ -28,5 +28,4 @@ describe('HelperService', () => {
       expect(expo.Updates.fetchUpdateAsync).toHaveBeenCalledTimes(0);
     });
   });
-
 });
