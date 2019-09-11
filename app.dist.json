@@ -1,23 +1,22 @@
 {
   "expo": {
-    "name": "test test MS",
-    "slug": "test-test-ms",
-    "version": "1.0.0",
+    "name": "test making sense",
+    "slug": "test-making-sense",
+    "version": "0.1.0",
     "sdkVersion": "34.0.0",
     "platforms": [
       "ios",
       "android"
     ],
     "ios": {
-      "bundleIdentifier": "com.test.ms.test",
+      "bundleIdentifier": "com.making.sense.test",
       "supportsTablet": true,
       "config": {
         "usesNonExemptEncryption": false
-      },
-      "buildNumber": "1.0.0"
+      }
     },
     "android": {
-      "package": "com.test.ms.test",
+      "package": "com.making.sense.test",
       "versionCode": 1
     },
     "icon": "./icon.png",
