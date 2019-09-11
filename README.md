@@ -108,7 +108,7 @@ export abstract class Logger {
 * * an epic received that action as an observable emition > then called the server > then emited a new action `GET_USER_SUCCESS` which will be `dispatched` into the *redux store*
 * * a `reducer` with a *switch case* for `GET_USER_SUCCESS` adds the user to the user's state
 
-#### actions 
+#### actions
 * Actions are payloads of information that send data from the application to the store
 ```typescript
 
