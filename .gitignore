@@ -5,6 +5,7 @@ coverage
 
 # expo
 app.json
+src/config/config.json
 .expo/
 
 # dependencies
