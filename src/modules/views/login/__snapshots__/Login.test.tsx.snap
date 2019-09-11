@@ -12,9 +12,6 @@ exports[`Login renders showing errors 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#1745D5",
@@ -29,9 +26,6 @@ exports[`Login renders showing errors 1`] = `
     Making Sense RN seed
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#9FA7BC",
@@ -45,9 +39,6 @@ exports[`Login renders showing errors 1`] = `
     Please login to your account
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#C21E5D",
@@ -60,8 +51,6 @@ exports[`Login renders showing errors 1`] = `
     Oops! Invalid email or password
   </Text>
   <View
-    enabled={true}
-    keyboardVerticalOffset={0}
     onLayout={[Function]}
     style={
       Array [
@@ -92,9 +81,6 @@ exports[`Login renders showing errors 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#9FA7BC",
@@ -112,6 +98,7 @@ exports[`Login renders showing errors 1`] = `
           onChangeText={[Function]}
           placeholder="Enter your email..."
           placeholderTextColor="#D5DEF1"
+          rejectResponderTermination={true}
           style={
             Array [
               Object {
@@ -141,9 +128,6 @@ exports[`Login renders showing errors 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#9FA7BC",
@@ -160,6 +144,7 @@ exports[`Login renders showing errors 1`] = `
           onChangeText={[Function]}
           placeholder="Enter your password..."
           placeholderTextColor="#D5DEF1"
+          rejectResponderTermination={true}
           secureTextEntry={true}
           style={
             Array [
@@ -186,109 +171,50 @@ exports[`Login renders showing errors 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "marginLeft": 15,
-          "marginRight": 15,
-        },
-        undefined,
-        undefined,
-        Object {
-          "borderRadius": 25,
-        },
-      ]
+      Object {
+        "borderRadius": 3,
+      }
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      style={null}
-      testID={undefined}
-      tvParallaxProperties={undefined}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="login-button"
     >
       <View
-        pointerEvents="box-only"
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#9E9E9E",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "padding": 19,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "backgroundColor": "#1745D5",
-            },
-            Object {
-              "borderRadius": 25,
-            },
-            Object {
-              "padding": 12,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            false,
-          ]
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
-            Array [
-              Object {},
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              Array [
-                Object {
-                  "color": "white",
-                  "fontSize": 20,
-                },
-                undefined,
-                Object {
-                  "fontSize": 17.5,
-                },
-                Object {
-                  "fontSize": 17,
-                },
-                undefined,
-                Object {
-                  "fontWeight": "600",
-                },
-                undefined,
-                false,
-              ],
-            ]
+            Object {
+              "color": "white",
+              "fontSize": 18,
+              "paddingBottom": 1,
+              "paddingTop": 2,
+              "textAlign": "center",
+            }
           }
         >
           Login
@@ -311,9 +237,6 @@ exports[`Login renders without crashing 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#1745D5",
@@ -328,9 +251,6 @@ exports[`Login renders without crashing 1`] = `
     Making Sense RN seed
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#9FA7BC",
@@ -344,8 +264,6 @@ exports[`Login renders without crashing 1`] = `
     Please login to your account
   </Text>
   <View
-    enabled={true}
-    keyboardVerticalOffset={0}
     onLayout={[Function]}
     style={
       Array [
@@ -376,9 +294,6 @@ exports[`Login renders without crashing 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#9FA7BC",
@@ -396,6 +311,7 @@ exports[`Login renders without crashing 1`] = `
           onChangeText={[Function]}
           placeholder="Enter your email..."
           placeholderTextColor="#D5DEF1"
+          rejectResponderTermination={true}
           style={
             Array [
               Object {
@@ -422,9 +338,6 @@ exports[`Login renders without crashing 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#9FA7BC",
@@ -441,6 +354,7 @@ exports[`Login renders without crashing 1`] = `
           onChangeText={[Function]}
           placeholder="Enter your password..."
           placeholderTextColor="#D5DEF1"
+          rejectResponderTermination={true}
           secureTextEntry={true}
           style={
             Array [
@@ -464,109 +378,50 @@ exports[`Login renders without crashing 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "marginLeft": 15,
-          "marginRight": 15,
-        },
-        undefined,
-        undefined,
-        Object {
-          "borderRadius": 25,
-        },
-      ]
+      Object {
+        "borderRadius": 3,
+      }
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      style={null}
-      testID={undefined}
-      tvParallaxProperties={undefined}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="login-button"
     >
       <View
-        pointerEvents="box-only"
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#9E9E9E",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "padding": 19,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "backgroundColor": "#1745D5",
-            },
-            Object {
-              "borderRadius": 25,
-            },
-            Object {
-              "padding": 12,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            false,
-          ]
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
-            Array [
-              Object {},
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              Array [
-                Object {
-                  "color": "white",
-                  "fontSize": 20,
-                },
-                undefined,
-                Object {
-                  "fontSize": 17.5,
-                },
-                Object {
-                  "fontSize": 17,
-                },
-                undefined,
-                Object {
-                  "fontWeight": "600",
-                },
-                undefined,
-                false,
-              ],
-            ]
+            Object {
+              "color": "white",
+              "fontSize": 18,
+              "paddingBottom": 1,
+              "paddingTop": 2,
+              "textAlign": "center",
+            }
           }
         >
           Login
@@ -589,9 +444,6 @@ exports[`Login renders without crashing on Android 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#1745D5",
@@ -606,9 +458,6 @@ exports[`Login renders without crashing on Android 1`] = `
     Making Sense RN seed
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#9FA7BC",
@@ -622,8 +471,6 @@ exports[`Login renders without crashing on Android 1`] = `
     Please login to your account
   </Text>
   <View
-    enabled={true}
-    keyboardVerticalOffset={NaN}
     onLayout={[Function]}
     style={
       Array [
@@ -654,9 +501,6 @@ exports[`Login renders without crashing on Android 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#9FA7BC",
@@ -674,6 +518,7 @@ exports[`Login renders without crashing on Android 1`] = `
           onChangeText={[Function]}
           placeholder="Enter your email..."
           placeholderTextColor="#D5DEF1"
+          rejectResponderTermination={true}
           style={
             Array [
               Object {
@@ -700,9 +545,6 @@ exports[`Login renders without crashing on Android 1`] = `
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
             Object {
               "color": "#9FA7BC",
@@ -719,6 +561,7 @@ exports[`Login renders without crashing on Android 1`] = `
           onChangeText={[Function]}
           placeholder="Enter your password..."
           placeholderTextColor="#D5DEF1"
+          rejectResponderTermination={true}
           secureTextEntry={true}
           style={
             Array [
@@ -742,109 +585,50 @@ exports[`Login renders without crashing on Android 1`] = `
   </View>
   <View
     style={
-      Array [
-        Object {
-          "marginLeft": 15,
-          "marginRight": 15,
-        },
-        undefined,
-        undefined,
-        Object {
-          "borderRadius": 25,
-        },
-      ]
+      Object {
+        "borderRadius": 3,
+      }
     }
   >
     <View
-      accessibilityComponentType={undefined}
-      accessibilityLabel={undefined}
-      accessibilityTraits={undefined}
       accessible={true}
-      hasTVPreferredFocus={undefined}
-      hitSlop={undefined}
       isTVSelectable={true}
-      nativeID={undefined}
-      onLayout={undefined}
       onResponderGrant={[Function]}
       onResponderMove={[Function]}
       onResponderRelease={[Function]}
       onResponderTerminate={[Function]}
       onResponderTerminationRequest={[Function]}
       onStartShouldSetResponder={[Function]}
-      style={null}
-      testID={undefined}
-      tvParallaxProperties={undefined}
+      style={
+        Object {
+          "opacity": 1,
+        }
+      }
+      testID="login-button"
     >
       <View
-        pointerEvents="box-only"
         style={
-          Array [
-            Object {
-              "alignItems": "center",
-              "backgroundColor": "#9E9E9E",
-              "flexDirection": "row",
-              "justifyContent": "center",
-              "padding": 19,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            Object {
-              "backgroundColor": "#1745D5",
-            },
-            Object {
-              "borderRadius": 25,
-            },
-            Object {
-              "padding": 12,
-            },
-            undefined,
-            undefined,
-            undefined,
-            undefined,
-            false,
-            false,
-          ]
+          Object {
+            "alignItems": "center",
+            "backgroundColor": "#2089dc",
+            "borderColor": "#2089dc",
+            "borderRadius": 3,
+            "borderWidth": 0,
+            "flexDirection": "row",
+            "justifyContent": "center",
+            "padding": 8,
+          }
         }
       >
         <Text
-          accessible={true}
-          allowFontScaling={true}
-          ellipsizeMode="tail"
           style={
-            Array [
-              Object {},
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              undefined,
-              Array [
-                Object {
-                  "color": "white",
-                  "fontSize": 20,
-                },
-                undefined,
-                Object {
-                  "fontSize": 17.5,
-                },
-                Object {
-                  "fontSize": 17,
-                },
-                undefined,
-                Object {
-                  "fontWeight": "600",
-                },
-                undefined,
-                false,
-              ],
-            ]
+            Object {
+              "color": "white",
+              "fontSize": 18,
+              "paddingBottom": 1,
+              "paddingTop": 2,
+              "textAlign": "center",
+            }
           }
         >
           Login

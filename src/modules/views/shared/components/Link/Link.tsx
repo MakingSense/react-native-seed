@@ -29,5 +29,5 @@ export default class Link extends React.PureComponent<ILinkProps> {
     } catch (e) {
       Logger.error('Error linking', e);
     }
-  }
+  };
 }

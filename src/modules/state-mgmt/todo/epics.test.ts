@@ -41,6 +41,5 @@ describe('user epics', () => {
         done();
       });
     });
-
   });
 });

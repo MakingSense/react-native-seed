@@ -12,7 +12,8 @@ export default class ErrorBoundary extends React.PureComponent<{}, IErrorBoundar
   };
   public state = { hasError: false };
 
-  public componentDidCatch(error, info) { // eslint-disable-line
+  public componentDidCatch(error, info) {
+    // eslint-disable-line
     Logger.error('ErrorBoundary: ', error, info);
     this.setState({ hasError: true });
   }

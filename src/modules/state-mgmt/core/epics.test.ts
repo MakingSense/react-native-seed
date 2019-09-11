@@ -1,10 +1,9 @@
 import { ActionsObservable } from 'redux-observable';
-import { throwError } from 'rxjs';
 import { AjaxError } from 'rxjs/ajax';
 
 import { ENV } from '../../../constants';
 import { IEpicDependencies, userState, todoState } from '../rootState';
-import { coreGetEpicSetNavigation, coreGetEpicErrorHandler, coreGetEpicCheckForUpdates, coreGetEpicBootstrap, } from './epics';
+import { coreGetEpicSetNavigation, coreGetEpicErrorHandler, coreGetEpicCheckForUpdates, coreGetEpicBootstrap } from './epics';
 import { actions, ActionType } from './actions';
 import { getDeps } from '../../../test/epicDependencies';
 import { getInitialState, getState } from '../../../test/entities';
@@ -28,10 +27,11 @@ describe('Core epics', () => {
         expect(output).toEqual(actions.setNavigationSuccess());
         done();
       });
-
     });
     it('should catch errors and dispatch them to the general error handler', done => {
-      deps.navigationService.setNavigation = () => { throw error; };
+      deps.navigationService.setNavigation = () => {
+        throw error;
+      };
       coreGetEpicSetNavigation(ActionsObservable.of(actions.setNavigation(navigation)), state$, deps).subscribe(output => {
         expect(output).toEqual(actions.epicError(error));
         done();
@@ -54,7 +54,6 @@ describe('Core epics', () => {
     it('should dispatch resetSession action on 401 errors', done => {
       const ajaxError = new AjaxError('message', { status: 401 } as any, {} as any);
       coreGetEpicErrorHandler(ActionsObservable.of(actions.epicError(ajaxError)), state$, deps).subscribe(output => {
-        // expect(output).toEqual(authState.actions.resetSession());
         expect(false).toBe(true);
         done();
       });
@@ -95,7 +94,9 @@ describe('Core epics', () => {
     });
 
     it('should catch errors and dispatch them to the general error handler', done => {
-      deps.navigationService.navigation.dispatch = () => { throw error; };
+      deps.navigationService.navigation.dispatch = () => {
+        throw error;
+      };
       coreGetEpicBootstrap(ActionsObservable.of(actions.bootstrap('token')), state$, deps).subscribe(output => {
         if (output.type === ActionType.EPIC_ERROR) {
           expect(output).toEqual(actions.epicError(error));
@@ -104,5 +105,4 @@ describe('Core epics', () => {
       });
     });
   });
-
 });

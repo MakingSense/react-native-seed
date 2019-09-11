@@ -16,7 +16,7 @@ export interface ITodoListProps {
 export default class TodoList extends React.PureComponent<ITodoListProps, {}> {
   public render() {
     const { todoMap } = this.props;
-    const todoList = Object.values(todoMap).sort((a, b) => a.createdAt > b.createdAt ? -1 : 1);
+    const todoList = Object.values(todoMap).sort((a, b) => (a.createdAt > b.createdAt ? -1 : 1));
     return (
       <View style={styles.todoContainer}>
         <View style={styles.todoBody}>
@@ -40,5 +40,5 @@ export default class TodoList extends React.PureComponent<ITodoListProps, {}> {
   private onEndReached = (oldestTodo: TodoModel.ITodo) => () => {
     const { fetchTodoList } = this.props;
     fetchTodoList({ page: 1, limit: ENV.PAGINATION.LIMIT, q: { createdAt$ls: oldestTodo.createdAt } });
-  }
+  };
 }

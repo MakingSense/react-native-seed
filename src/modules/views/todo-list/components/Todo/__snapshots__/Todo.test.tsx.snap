@@ -10,9 +10,6 @@ exports[`Login renders without crashing 1`] = `
   }
 >
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "color": "#1745D5",
@@ -23,9 +20,6 @@ exports[`Login renders without crashing 1`] = `
     I AM A TODO
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "fontSize": 15,
@@ -35,9 +29,6 @@ exports[`Login renders without crashing 1`] = `
     i am a todo description
   </Text>
   <Text
-    accessible={true}
-    allowFontScaling={true}
-    ellipsizeMode="tail"
     style={
       Object {
         "fontSize": 13,

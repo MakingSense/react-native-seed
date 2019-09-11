@@ -1,12 +1,15 @@
-import { createStackNavigator } from 'react-navigation';
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
 
 import TodoListContainer from './views/todo-list';
 import LoginContainer from './views/login';
 
-export default createStackNavigator(
+const stackNavigator = createStackNavigator(
   {
     Login: LoginContainer,
     TodoList: TodoListContainer
   },
   { initialRouteName: 'Login' }
 );
+
+export default createAppContainer(stackNavigator);

@@ -3,9 +3,9 @@
     "target": "es5",
     "module": "es2015",
     "outDir": "build/dist",
-    "sourceMap": true,
     "experimentalDecorators": true,
     "removeComments": false,
+    "sourceMap": false,
     "noImplicitAny": false,
     "jsx": "react-native",
     "lib": ["dom", "es2015", "es2016", "es2017"],
@@ -17,7 +17,8 @@
     "noImplicitReturns": true,
     "strictNullChecks": false,
     "baseUrl": "./src",
-    "noEmit": true
+    "noEmit": true,
+    "resolveJsonModule": true
   },
   "include": [
     "*.ts",

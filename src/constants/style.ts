@@ -27,10 +27,10 @@ export const STYLE = {
     NONARY: '#C21E5D',
     DENARY: '#00B4EB',
     BLACK: '#0F0F0F',
-    WHITE: '#FFF',
+    WHITE: '#FFF'
   },
   BORDER: {
     GLOBAL_RADIUS: 4,
-    QUARTER: 25,
-  },
+    QUARTER: 25
+  }
 };

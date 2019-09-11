@@ -11,9 +11,9 @@ export default StyleSheet.create({
     color: STYLE.COLOR.PRIMARY
   },
   description: {
-    fontSize: 15,
+    fontSize: 15
   },
   date: {
-    fontSize: 13,
+    fontSize: 13
   }
 });

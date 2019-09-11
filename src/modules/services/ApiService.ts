@@ -46,24 +46,26 @@ export class ApiService {
       page: 1,
       limit: 1,
       totalPages: 1,
-      docs: [{
-        _id: idList[0],
-        email: 'dgeslin@makingsense.com',
-        name: 'Daniel Geslin',
-        firstname: 'Daniel ',
-        lastname: 'Geslin',
-        nickname: 'dgeslin',
-        avatar: 'https://lh4.googleusercontent.com/-WUY2PDwnKZk/AAAAAAAAAAI/AAAAAAAAAAc/1UMlOKImKRA/photo.jpg',
-        picture: 'https://s.gravatar.com/avatar/8e5ef526703b1e38f75cba07ec2c3604?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fdg.png',
-        gender: null,
-        location: 'sf',
-        role: 'general',
-        lastOnline: new Date(),
-        forcedStatus: UserModel.ForcedStatus.AVAILABLE,
-        status: UserModel.Status.ONLINE,
-        createdAt: new Date(),
-        updatedAt: null
-      }]
+      docs: [
+        {
+          _id: idList[0],
+          email: 'dgeslin@makingsense.com',
+          name: 'Daniel Geslin',
+          firstname: 'Daniel ',
+          lastname: 'Geslin',
+          nickname: 'dgeslin',
+          avatar: 'https://lh4.googleusercontent.com/-WUY2PDwnKZk/AAAAAAAAAAI/AAAAAAAAAAc/1UMlOKImKRA/photo.jpg',
+          picture: 'https://s.gravatar.com/avatar/8e5ef526703b1e38f75cba07ec2c3604?s=480&r=pg&d=https%3A%2F%2Fcdn.auth0.com%2Favatars%2Fdg.png',
+          gender: null,
+          location: 'sf',
+          role: 'general',
+          lastOnline: new Date(),
+          forcedStatus: UserModel.ForcedStatus.AVAILABLE,
+          status: UserModel.Status.ONLINE,
+          createdAt: new Date(),
+          updatedAt: null
+        }
+      ]
     }).pipe(delay(300));
   }
 
@@ -88,30 +90,31 @@ export class ApiService {
 
   private request<T = any>(
     path: string,
-    options: { method: string; body?: any; query?: GeneralModel.IApiQuery, headers?: { [key: string]: any } } = { method: 'GET' }
+    options: { method: string; body?: any; query?: GeneralModel.IApiQuery; headers?: { [key: string]: any } } = { method: 'GET' }
   ): Observable<T> {
-    options.headers = { 'Content-Type': 'application/json', 'Accept': 'application/json' };
+    options.headers = { 'Content-Type': 'application/json', Accept: 'application/json' };
     if (options.body) options.body = this.parseBody(options.body);
     if (this.token) options.headers['x-access-token'] = this.token;
     const requestOptions = { body: options.body, headers: options.headers, method: options.method };
     return this.http({ url: `${this.apiUrl}/${path}?${this.parseQuery(options.query)}`, ...requestOptions }).pipe(
       map(data => data.response as T),
-      retryWhen((error: Observable<AjaxResponse>) => error.pipe(
-        switchMap((e: AjaxResponse) => {
-          if (e.status !== 401) return of(e).pipe(delay(this.retryTimeout));
-          else return throwError(e);
-        }),
-        take(this.maxRetries),
-        concat(throwError(error))
-      ))
+      retryWhen((error: Observable<AjaxResponse>) =>
+        error.pipe(
+          switchMap((e: AjaxResponse) => {
+            if (e.status !== 401) return of(e).pipe(delay(this.retryTimeout));
+            else return throwError(e);
+          }),
+          take(this.maxRetries),
+          concat(throwError(error))
+        )
+      )
     );
   }
 
   private parseQuery(query: GeneralModel.IApiQuery): string {
     try {
-      return Object
-        .keys(query)
-        .map(key => `${key}=${(query[key] && typeof query[key] === 'object') ? JSON.stringify(query[key]) : query[key]}`)
+      return Object.keys(query)
+        .map(key => `${key}=${query[key] && typeof query[key] === 'object' ? JSON.stringify(query[key]) : query[key]}`)
         .join('&');
     } catch {
       /* istanbul ignore next line */

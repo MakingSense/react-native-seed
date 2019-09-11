@@ -25,7 +25,7 @@ export const getUser_1 = (): UserModel.IUser => ({
   forcedStatus: UserModel.ForcedStatus.AVAILABLE,
   status: UserModel.Status.ONLINE,
   createdAt: '2018-05-21',
-  updatedAt: '2018-08-27',
+  updatedAt: '2018-08-27'
 });
 
 export const getTodo_1 = (): TodoModel.ITodo => ({
@@ -35,7 +35,7 @@ export const getTodo_1 = (): TodoModel.ITodo => ({
   description: 'i am a todo description',
   status: TodoModel.Status.PENDING,
   createdAt: '2018-05-11',
-  updatedAt: '2018-08-27',
+  updatedAt: '2018-08-27'
 });
 
 export const getTodo_2 = (): TodoModel.ITodo => ({
@@ -45,7 +45,7 @@ export const getTodo_2 = (): TodoModel.ITodo => ({
   description: 'i am a todo description 2',
   status: TodoModel.Status.PENDING,
   createdAt: '2018-05-12',
-  updatedAt: '2018-08-27',
+  updatedAt: '2018-08-27'
 });
 
 export const getTodo_3 = (): TodoModel.ITodo => ({
@@ -55,7 +55,7 @@ export const getTodo_3 = (): TodoModel.ITodo => ({
   description: 'i am a todo description 3',
   status: TodoModel.Status.PENDING,
   createdAt: '2018-05-10',
-  updatedAt: '2018-08-27',
+  updatedAt: '2018-08-27'
 });
 
 export const getTodo_4 = (): TodoModel.ITodo => ({
@@ -65,7 +65,7 @@ export const getTodo_4 = (): TodoModel.ITodo => ({
   description: 'i am a todo description 3',
   status: TodoModel.Status.PENDING,
   createdAt: '2018-05-13',
-  updatedAt: '2018-08-27',
+  updatedAt: '2018-08-27'
 });
 
 export const getLoginResponse = (): GeneralModel.ILoginResponse => ({

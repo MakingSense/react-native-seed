@@ -24,11 +24,11 @@ export default StyleSheet.create({
     marginTop: 8
   },
   inputContainer: {
-    marginBottom: 32,
+    marginBottom: 32
   },
   inputTemplate: {
     marginBottom: Platform.OS === 'ios' ? 110 : 55,
-    marginTop: Platform.OS === 'ios' ? 50 : 25,
+    marginTop: Platform.OS === 'ios' ? 50 : 25
   },
   input: {
     borderColor: STYLE.COLOR.OCTANARY,
