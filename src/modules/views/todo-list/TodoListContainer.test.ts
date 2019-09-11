@@ -1,5 +1,5 @@
 import { mapStateToProps, mapDispatchToProps } from './TodoListContainer';
-import { todoState } from '../../state-mgmt/rootState';
+import { todoState } from '../..//state-mgmt/todo';
 import { getState, getUser_1 } from '../../../test/entities';
 
 describe('TodoListContainer', () => {

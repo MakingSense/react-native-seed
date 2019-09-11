@@ -1,5 +1,8 @@
 import { GeneralModel, UserModel, TodoModel } from '../modules/models';
-import { IRootState, authState, userState, todoState } from '../modules/state-mgmt/rootState';
+import { IRootState } from '../modules/state-mgmt/rootState';
+import { authState } from '../modules/state-mgmt/auth';
+import { userState } from '../modules/state-mgmt/user';
+import { todoState } from '../modules/state-mgmt/todo';
 
 export const getPaginationOf = (entity: any): GeneralModel.IPagination<any> => ({
   count: 1,

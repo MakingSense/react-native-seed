@@ -1,7 +1,6 @@
-import { IAuthState, authState } from './auth';
-import { IUserState, userState } from './user';
-import { ITodoState, todoState } from './todo';
-import { coreState } from './core';
+import { IState as IAuthState } from './auth/state';
+import { IState as IUserState } from './user/state';
+import { IState as ITodoState } from './todo/state';
 import { ApiService } from '../services/ApiService';
 import { NavigationService } from '../services/NavigationService';
 import { HelperService } from '../services/HelperService';
@@ -26,5 +25,3 @@ export interface IEpicDependencies {
   helperService: typeof HelperService;
   logger: typeof Logger;
 }
-
-export { authState, coreState, userState, todoState };

@@ -1,5 +1,6 @@
 import { mapStateToProps, mapDispatchToProps } from './LoginContainer';
-import { authState, coreState } from '../../state-mgmt/rootState';
+import { coreState } from '../../state-mgmt/core';
+import { authState } from '../../state-mgmt/auth';
 import { getState } from '../../../test/entities';
 
 describe('LoginContainer', () => {

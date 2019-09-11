@@ -1,9 +1,9 @@
-import Expo from 'expo';
+import { Updates, AuthSession, Notifications } from 'expo';
 
 import { Logger } from './Logger';
 
 export abstract class HelperService {
-  private static expo = Expo;
+  private static expo = { Updates };
 
   public static async checkForUpdates(): Promise<void> {
     try {

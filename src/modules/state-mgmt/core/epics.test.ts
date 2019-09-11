@@ -2,7 +2,9 @@ import { ActionsObservable } from 'redux-observable';
 import { AjaxError } from 'rxjs/ajax';
 
 import { ENV } from '../../../constants';
-import { IEpicDependencies, userState, todoState } from '../rootState';
+import { IEpicDependencies } from '../rootState';
+import { todoState } from '../todo';
+import { userState } from '../user';
 import { coreGetEpicSetNavigation, coreGetEpicErrorHandler, coreGetEpicCheckForUpdates, coreGetEpicBootstrap } from './epics';
 import { actions, ActionType } from './actions';
 import { getDeps } from '../../../test/epicDependencies';
