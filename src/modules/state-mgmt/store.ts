@@ -7,7 +7,11 @@ import { NavigationService } from '../services/NavigationService';
 import { HelperService } from '../services/HelperService';
 import { Logger } from '../services/Logger';
 import { AsyncStorageService } from '../services/AsyncStorageService';
-import { IRootState, IEpicDependencies, authState, coreState, userState, todoState } from './rootState';
+import { IRootState, IEpicDependencies } from './rootState';
+import { authState } from './auth';
+import { coreState } from './core';
+import { userState } from './user';
+import { todoState } from './todo';
 
 const rootEpic = combineEpics<any>(...authState.epics, ...coreState.epics, ...userState.epics, ...todoState.epics);
 

@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 
 import { GeneralModel } from '../../models';
-import { IRootState, todoState } from '../../state-mgmt/rootState';
+import { IRootState } from '../../state-mgmt/rootState';
+import { todoState } from '../..//state-mgmt/todo';
 import TodoList from './TodoList';
 
 export const mapStateToProps = (state: IRootState) => ({

@@ -3,7 +3,8 @@ import { of, concat } from 'rxjs';
 import { catchError, mergeMap, switchMap } from 'rxjs/operators';
 
 import { GeneralModel } from '../../models';
-import { IAction, IRootState, IEpicDependencies, coreState } from '../rootState';
+import { IAction, IRootState, IEpicDependencies } from '../rootState';
+import { coreState } from '../core';
 import { actions, ActionType } from './actions';
 
 export const authGetEpicAuthStart: Epic<IAction, IAction, IRootState, IEpicDependencies> = (action$, state$, deps) =>

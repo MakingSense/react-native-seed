@@ -1,10 +1,11 @@
 import { ActionsObservable } from 'redux-observable';
 
-import { IEpicDependencies, coreState } from '../rootState';
+import { IEpicDependencies } from '../rootState';
 import { authGetEpicAuthStart } from './epics';
 import { ActionType, actions } from './actions';
 import { getDeps } from '../../../test/epicDependencies';
 import { getLoginResponse } from '../../../test/entities';
+import { coreState } from '../core';
 
 describe('auth epics', () => {
   let deps: IEpicDependencies;

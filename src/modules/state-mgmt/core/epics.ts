@@ -5,7 +5,9 @@ import { tap, map, catchError, mergeMap, switchMap, startWith } from 'rxjs/opera
 import { StackActions, NavigationActions } from 'react-navigation';
 
 import { ENV } from '../../../constants';
-import { IAction, IRootState, IEpicDependencies, userState, todoState } from '../rootState';
+import { actions as todoActions } from '../todo/actions';
+import { actions as userActions } from '../user/actions';
+import { IAction, IRootState, IEpicDependencies } from '../rootState';
 import { actions, ActionType } from './actions';
 
 export const coreGetEpicSetNavigation: Epic<IAction, IAction, IRootState, IEpicDependencies> = (action$, state$, deps) =>
@@ -56,7 +58,7 @@ export const coreGetEpicBootstrap: Epic<IAction, IAction, IRootState, IEpicDepen
     tap(({ payload }) => deps.apiService.setToken(payload.accessToken)),
     /** merge maps emits get current user & first todo list fetch data and isolates an observable branch in case it fails  */
     mergeMap(() =>
-      of(userState.actions.setListStart([state$.value.auth.currentUserId]), todoState.actions.setListStart({ page: 1, limit: ENV.PAGINATION.LIMIT })).pipe(
+      of(userActions.setListStart([state$.value.auth.currentUserId]), todoActions.setListStart({ page: 1, limit: ENV.PAGINATION.LIMIT })).pipe(
         /** side effect to navigate to initial authenticated view and reset the router so the user can't go back to the login */
         tap(() => {
           const resetAction = StackActions.reset({ index: 0, actions: [NavigationActions.navigate({ routeName: 'TodoList' })] });
